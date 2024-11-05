@@ -1,7 +1,7 @@
 {
   "name": "cypress-automation-test",
   "version": "1.0.0",
-  "description": "",
+  "description": "Automation Exercise Page Test",
   "main": "index.js",
   "scripts": {
     "test": "cypress run",
@@ -10,7 +10,7 @@
     "lint-fix": "eslint cypress/**/*.js --fix"
   },
   "keywords": [],
-  "author": "",
+  "author": "Heidy Montes de Oca",
   "license": "ISC",
   "devDependencies": {
     "@eslint/js": "^9.14.0",
