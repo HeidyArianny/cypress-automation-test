@@ -1,0 +1,9 @@
+1. Choose a framework and explain why
+
+I chose Cypress first of all because I have more experience with it than with Playwright.
+I also like the fast testing experience that it has because it operates directly in the browser and executes the
+tests in real time.
+It's also really easy to get started with Cypress, including installation and configuration.
+The built-in debugging tools Cypress has and the extensions you can add also make the QAs work (and life) easier.
+Although it gets complicated with some elements (like iframes) we can always find a workaround for these kind of
+issues due to the great documentation and community it has.

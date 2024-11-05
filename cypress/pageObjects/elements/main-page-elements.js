@@ -1,25 +1,25 @@
 const productsButton = {
-    selector: 'a[href="/products"]',
-    text: 'Products'
+  selector: 'a[href="/products"]',
+  text: 'Products'
 };
 
 const productsPageTitle = {
-    selector: '.title',
-    text: 'All Products'
+  selector: '.title',
+  text: 'All Products'
 };
 
 const loggedInMessage = {
-    selector: ':nth-child(10) > a',
-    text: 'Logged in as'
+  selector: ':nth-child(10) > a',
+  text: 'Logged in as'
 };
 
 const cartButton = {
-    selector: '.shop-menu > .nav > :nth-child(3) > a'
+  selector: '.shop-menu > .nav > :nth-child(3) > a'
 };
 
 export const mainPageElements = {
-    productsButton,
-    productsPageTitle,
-    loggedInMessage,
-    cartButton
+  productsButton,
+  productsPageTitle,
+  loggedInMessage,
+  cartButton
 };

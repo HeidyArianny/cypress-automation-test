@@ -1,5 +1,5 @@
-import { defineConfig } from "cypress";
-import { report } from 'cypress-mochawesome-reporter/plugin';
+import { defineConfig } from 'cypress';
+import cypressMochawesomeReporter from 'cypress-mochawesome-reporter/plugin.js';
 
 export default defineConfig({
   projectId: 'Cypress Automation Test',
@@ -8,7 +8,7 @@ export default defineConfig({
   chromeWebSecurity: false,
   e2e: {
     setupNodeEvents(on, config) {
-      report(on);
+      cypressMochawesomeReporter(on);
     },
     env: {
       webWidth: 1280,
@@ -24,9 +24,12 @@ export default defineConfig({
       runMode: 0,
       openMode: 0
     },
-    reporter: 'mochawesome',
+    reporter: 'cypress-mochawesome-reporter',
     reporterOptions: {
-      reportDir: 'reports',
+      reportDir: 'cypress/reports',
+      reportTitle: 'Test Results',
+      reportFilename: 'testResults',
+      charts: true,
       overwrite: false,
       html: true,
       json: true

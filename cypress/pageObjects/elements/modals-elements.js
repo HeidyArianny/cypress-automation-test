@@ -1,33 +1,34 @@
 const modalNotification = {
-    selector: '.modal-content',
-    addedToCartTitle: 'Added!',
-    addedToCartSubtitle: 'Your product has been added to cart.',
-    viewCartButtonText: 'View Cart',
-    checkoutTitle: 'Checkout',
-    checkoutSubtitle: 'Register / Login account to proceed on checkout.'
+  selector: '.modal-content',
+  addedToCartTitle: 'Added!',
+  addedToCartSubtitle: 'Your product has been added to cart.',
+  viewCartButtonText: 'View Cart',
+  checkoutTitle: 'Checkout',
+  checkoutSubtitle: 'Register / Login account to proceed on checkout.'
 };
 
 const viewCartButton = {
-    selector: 'a[href="/view_cart"]',
+  selector: 'a[href="/view_cart"]',
 };
 
 const registerOrLoginButton = {
-    selector: 'a[href="/login"]',
+  selector: 'a[href="/login"]',
 };
 
 export const modalsElements = {
-    modalNotification,
-    viewCartButton,
-    registerOrLoginButton
+  modalNotification,
+  viewCartButton,
+  registerOrLoginButton
 };
 
+// These were created in order to reduce code, you can see the full function in the respective actions files
 export const addToCartModalAssertions = [
-    { selector: modalNotification.selector, text: modalNotification.addedToCartTitle },
-    { selector: modalNotification.selector, text: modalNotification.addedToCartSubtitle },
-    { selector: modalNotification.selector, text:  modalNotification.viewCartButtonText}
+  { selector: modalNotification.selector, text: modalNotification.addedToCartTitle },
+  { selector: modalNotification.selector, text: modalNotification.addedToCartSubtitle },
+  { selector: modalNotification.selector, text:  modalNotification.viewCartButtonText}
 ];
 
 export const checkoutModalAssertions = [
-    { selector: modalNotification.selector, text: modalNotification.checkoutTitle },
-    { selector: modalNotification.selector, text: modalNotification.checkoutSubtitle }
+  { selector: modalNotification.selector, text: modalNotification.checkoutTitle },
+  { selector: modalNotification.selector, text: modalNotification.checkoutSubtitle }
 ];

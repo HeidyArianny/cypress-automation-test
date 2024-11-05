@@ -1,34 +1,63 @@
-import { completeRegisterForm } from '../../pageObjects/actions/register-and-login-actions';
 import { placeOrderProcess } from '../../pageObjects/actions/payment-actions';
+import { completeRegisterForm, logout } from '../../pageObjects/actions/register-and-login-actions';
 import {
-    addToCart,
-    goToProductsPage,
-    itemSelection,
-    proceedToCheckout
+  addToCart,
+  goToProductsPage,
+  itemSelection,
+  proceedToCheckout
 } from '../../pageObjects/actions/checkout-flow-actions';
 
-const viewports = [
-    { label: 'Web', width: Cypress.env('webWidth'), height: Cypress.env('webHeight') },
-    { label: 'Desktop', width: Cypress.env('desktopWidth'), height: Cypress.env('desktopHeight') },
-    { label: 'Mobile', width: Cypress.env('mobileWidth'), height: Cypress.env('mobileHeight') },
-];
+describe('Checkout User Flow - Web', () => {
+  beforeEach(() => {
+    // Tests in the web viewport specified in cypress.config.js
+    cy.viewport(Cypress.env('webWidth'), Cypress.env('webHeight'));
+    // Visits the defined default url
+    cy.visit(Cypress.env('baseUrl'));
+  });
 
-context('Checkout User Flow', () => {
-    viewports.forEach(viewport => {
-        context(`Viewport: ${viewport.label}`, () => {
-            beforeEach(() => {
-                cy.visit(Cypress.env('baseUrl'));
-                cy.viewport(viewport.width, viewport.height);
-            });
+  it('TC-01 Add to Cart and Checkout - Web', () => {
+    goToProductsPage();
+    itemSelection();
+    addToCart();
+    proceedToCheckout();
+    completeRegisterForm('webTest');
+    placeOrderProcess();
+    logout();
+  });
+});
 
-            it(`TC-01 Add to Cart and Checkout - ${viewport.label}`, () => {
-                goToProductsPage();
-                itemSelection();
-                addToCart();
-                proceedToCheckout();
-                completeRegisterForm();
-                placeOrderProcess();
-            });
-        });
-    });
+describe('Checkout User Flow - Mobile', () => {
+  beforeEach(() => {
+    // Tests in the mobile viewport specified in cypress.config.js
+    cy.viewport(Cypress.env('mobileWidth'), Cypress.env('mobileHeight'));
+    cy.visit(Cypress.env('baseUrl'));
+  });
+
+  it('TC-01 Add to Cart and Checkout - Mobile', () => {
+    goToProductsPage();
+    itemSelection();
+    addToCart();
+    proceedToCheckout();
+    completeRegisterForm('mobileTest');
+    placeOrderProcess();
+    logout();
+  });
+});
+
+describe('Checkout User Flow - Desktop', () => {
+  beforeEach(() => {
+    // Tests in the desktop viewport specified in cypress.config.js
+    cy.viewport(Cypress.env('desktopWidth'), Cypress.env('desktopHeight'));
+    cy.visit(Cypress.env('baseUrl'));
+  });
+
+  it('TC-01 Add to Cart and Checkout - Desktop', () => {
+    goToProductsPage();
+    itemSelection();
+    addToCart();
+    proceedToCheckout();
+    completeRegisterForm('desktopTest');
+    placeOrderProcess();
+    logout();
+  });
 });

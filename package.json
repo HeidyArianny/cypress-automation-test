@@ -6,8 +6,8 @@
   "scripts": {
     "test": "cypress run",
     "report": "cypress run && mochawesome-merge cypress/reports/*.json | mochawesome-report-generator",
-    "lint-fix": "eslint cypress/integration/tests cypress/pageObjects --fix --ignore-pattern \"**/docs/scripts/*\"",
-    "lint": "eslint cypress/integration/tests cypress/pageObjects"
+    "lint": "eslint cypress/**/*.js",
+    "lint-fix": "eslint cypress/**/*.js --fix"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +19,7 @@
     "cypress-mochawesome-reporter": "^3.8.2",
     "eslint": "^9.14.0",
     "eslint-plugin-cypress": "^4.1.0",
-    "globals": "^15.11.0",
+    "globals": "^15.12.0",
     "mochawesome": "^7.1.3"
   }
 }
