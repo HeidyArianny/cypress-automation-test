@@ -1,0 +1,23 @@
+Test Time Notes:
+
+Task 1. Framework Selection Explanation
+6 minutes 7 seconds
+
+Task 2. Test Case Design
+9 minutes and 46 seconds
+
+Task 3. Automation Test Script
+Set up and dependencies: 7 minutes 57 seconds
+Eslint scripts and rules config: 5 minutes 56 seconds
+Mochawesome set up, scripts and rules: 13 minutes 41 seconds
+Script and some optional steps: 1 hour 23 minutes 08 seconds
+
+Task 5. Execution
+Execution and automation report (failure): 1 minute 44 seconds
+Execution and automation report (success): 2 minutes 18 seconds
+
+Task 6. Analysis and Test Report
+Manual report: 4 minutes 39 seconds
+
+Time constraint: 2 hours
+Total (required) steps time: 1 hour 59 minutes 42 seconds 
